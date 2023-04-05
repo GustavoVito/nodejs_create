@@ -1,74 +1,67 @@
-<nav class="navbar navbar-expand-lg " style="background-color: #357bff;">
-    <div class="container-fluid">
-      <a class="navbar-brand" >Sistema Web</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Cadastrar</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">Consultar</a>
-          </li>
-        </ul>
-      </div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary p-0">
+            <div class="container-fluid bg-primary p-3">
+                <a class="navbar-brand text-white" href="#">SISTEMA WEB</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarNav">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item ">
+                        <a class="nav-link active text-white" aria-current="page" href="#">Cadastrar</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link text-white text-active" href="./buscar">Consultar</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        </div>
     </div>
-  </nav>
+    <div class="row">
+        <div class="col">
+            <form action="/cadastrar" method="POST" class="bg-white px-4 py-3"> 
+                <h5 class="fw-bold py-1"> Cadastrar - Agendamento de Potenciais Clientes </h5>
+                <h6 class="fw-normal py-1 mb-4"> Sistema utiizado para agendamento de serviço </h6>
 
-  <div class="container">
-    <h1>Cadastro</h1>
-    <form>
-      <div class="mb-3">
-        <label for="nome" class="form-label">Nome</label>
-        <input type="text" class="form-control" id="nome" name="nome" required>
-      </div>
-      <div class="mb-3">
-        <label for="telefone" class="form-label">Telefone</label>
-        <input type="tel" class="form-control" id="telefone" name="telefone" required>
-      </div>
-      <div class="mb-3">
-        <label for="origem" class="form-label">Origem</label>
-        <select class="form-select" id="origem" name="origem" required>
-          <option value="">Selecione...</option>
-          <option value="1">Acre (AC)</option>
-          <option value="2">Alagoas (AL)</option>
-          <option value="3">Amapá (AP)</option>
-          <option value="4">Amazonas (AM)</option>
-          <option value="5">Bahia (BA)</option>
-          <option value="6">Ceará (CE)</option>
-          <option value="7">Distrito Federal (DF)</option>
-          <option value="8">Espírito Santo (ES)</option>
-          <option value="9">Goiás (GO)</option>
-          <option value="10">Maranhão (MA)</option>
-          <option value="11">Mato Grosso (MT)</option>
-          <option value="12">Mato Grosso do Sul (MS)</option>
-          <option value="13">Minas Gerais (MG)</option>
-          <option value="14">Pará (PA)</option>
-          <option value="15">Paraíba (PB)</option>
-          <option value="16">Paraná (PR)</option>
-          <option value="17">Pernambuco (PE)</option>
-          <option value="18">Piauí (PI)</option>
-          <option value="19">Rio de Janeiro (RJ)</option>
-          <option value="20">Rio Grande do Norte (RN)</option>
-          <option value="21">Rio Grande do Sul (RS)</option>
-          <option value="22">Rondônia (RO)</option>
-          <option value="23">Roraima (RR)</option>
-          <option value="24">Santa Catarina (SC)</option>
-          <option value="25">São Paulo (SP)</option>
-          <option value="26">Sergipe (SE)</option>
-          <option value="27">Tocantins (TO)</option>
-        </select>
-      </div>
-      <div class="mb-3">
-        <label for="data_contato" class="form-label">Data do Contato</label>
-        <input type="date" class="form-control" id="data_contato" name="data_contato" required>
-      </div>
-      <div class="mb-3">
-        <label for="observacoes" class="form-label">Observações</label>
-        <textarea class="form-control" id="observacoes" name="observacoes" rows="3"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary" style="background-color: #4b4b4b;">Salvar</button>
-    </form>
-  </div>
+                <div class="mb-3">
+                    <label for="nome" class="form-label text-left"> Nome: </label>
+                    <input type="text" class="form-control" id="nome" name="nome">
+                </div>  
+
+                <div class="mb-3">
+                    <label for="telefone" class="form-label text-left">Telefone: </label>
+                    <input type="text" class="form-control" id="telefone" name="telefone" placeholder="(xx)xxxxx-xxxx">
+                </div>  
+
+                <div class="mb-3">
+                    <label for="origem" class="form-label text-left">Origem: </label>
+                    <select id="origem" name="origem" class="form-select form-select-sm mb-3 py-2" aria-label=".form-select-sm example">
+                        <option selected>Selecione uma opção</option>
+                        <option value="1">Celular</option>
+                        <option value="2">Whatsapp</option>
+                        <option value="3">Linkedin</option>
+                        </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="date" class="form-label text-left">Data do contato:</label>
+                    <input type="date" class="form-control" id="date" name="data" placeholder="dd/mm/aaaa">
+                </div>
+
+                <div class="mb-3">
+                    <label for="observacao" class="form-label">Observação</label>
+                    <textarea class="form-control" id="observacao" name="observacao" rows="3"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary btn-sm p-2">Cadastrar</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>
