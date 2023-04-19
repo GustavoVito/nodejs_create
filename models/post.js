@@ -19,5 +19,5 @@ const Agendamentos = db.sequelize.define("Agendamentos", {
     }
 })
 
-//Agendamentos.sync({force:true})    //JÁ EXECUTADO
+Agendamentos.sync({force:true})    //JÁ EXECUTADO
 module.exports = Agendamentos

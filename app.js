@@ -26,14 +26,31 @@ app.post("/cadastrar", function(req, res){
         data: req.body.data,
         observacao: req.body.observacao
     }).then(function(){
-        res.send("Dados enviado com sucesso")
+        res.redirect("/")
     }).catch(function(error){
         res.send("Erro: "+error)
     })
 })
 
-app.get("/buscar", function(req, res){
-    res.send("primeira_pagina")
+app.get("/consulta", function(req, res){
+    // form_post é um nome genérico, pode ser qua
+    post.findAll().then(function(form_post){
+        res.render("consulta", {form_post})
+    }).catch(function(erro){
+        console.log("Erro ao carregar dados do banco: "+erro)
+    })
+})
+
+app.get("/excluir/:id", function(req,res){
+    post.destroy({
+        where: {
+            id: req.params.id
+        },
+        force: true
+    }).then(function(){
+        res.redirect("/consulta")
+    })
+    
 })
 
 app.listen(8081, function(){
