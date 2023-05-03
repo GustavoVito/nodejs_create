@@ -68,9 +68,10 @@
                             <div class="col border p-3">
                                 {{observacao}}
                             </div>
-                            <div class="col border p-3">
-                                <a href="/excluir/{{id}}" class="btn btn-primary btn-sm p-2">Excluir</a>
-                            </div>
+                            <div class="col">
+                            <button type="button" class="btn btn-primary"><a href="/editar/{{id}}" style="color:inherit">Editar</a></button>
+                            <button type="button" class="btn btn-primary"><a href="/excluir/{{id}}" style="color:inherit">Excluir</a></button>
+                        </div>
                         </div>
                     {{/dataValues}}
                 {{/each}}
